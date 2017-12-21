@@ -24,6 +24,7 @@ import java.io.File;
  Error:com.tencent.tinker.build.util.TinkerPatchException: all loader classes don't appear in old primary dex.
 
  这是什么问题，暂时不能解决！
+ 解决办法，将tinker的版本有1.6升到最新1.9.1，解决上面问题
  */
 public class MainActivity extends AppCompatActivity {
 

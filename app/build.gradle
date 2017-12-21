@@ -43,7 +43,7 @@ android {
          * so we can get the newly git version easily!
          */
         buildConfigField "String", "CLIENTVERSION", "\"${gitSha()}\""
-        buildConfigField "String", "PLATFORM",  "\"all\""
+        buildConfigField "String", "PLATFORM", "\"all\""
     }
     buildTypes {
         release {
@@ -67,9 +67,9 @@ dependencies {
     testCompile 'junit:junit:4.12'
 
     //可选，用于生成application类
-    compile('com.tencent.tinker:tinker-android-anno:1.6.2')
+    compile('com.tencent.tinker:tinker-android-anno:1.9.1')
     //tinker的核心库
-    compile('com.tencent.tinker:tinker-android-lib:1.6.2')
+    compile('com.tencent.tinker:tinker-android-lib:1.9.1')
     compile('com.android.support:multidex:1.0.1')
 }
 
@@ -86,11 +86,11 @@ ext {
     tinkerEnabled = true
     //you should bak the following files
     //old apk file to build patch apk
-    tinkerOldApkPath = "${bakPath}/app-debug-1221-11-32-05.apk" //替换成你第一次生成的apk文件名
+    tinkerOldApkPath = "${bakPath}/app-debug-1221-14-00-43.apk" //替换成你第一次生成的apk文件名
     //proguard mapping file to build patch apk
     tinkerApplyMappingPath = "${bakPath}/"
     //resource R.txt to build patch apk, must input if there is resource changed
-    tinkerApplyResourcePath = "${bakPath}/app-debug-1221-11-32-05-R.txt"//替换成你第一次生成的R.txt名字
+    tinkerApplyResourcePath = "${bakPath}/app-debug-1221-14-00-43-R.txt"//替换成你第一次生成的R.txt名字
 }
 
 
@@ -203,10 +203,10 @@ if (buildWithTinker()) {
              *
              */
             loader = ["com.tencent.tinker.loader.*",
-                    //warning, you must change it with your application
-                    "com.example.jinhui.tinkertest.SampleApplication",
-                    //use sample, let BaseBuildInfo unchangeable with tinker
-                    "tinker.sample.android.app.BaseBuildInfo"
+                      //warning, you must change it with your application
+                      "tinker.sample.android.SampleApplication",
+                      //use sample, let BaseBuildInfo unchangeable with tinker
+                      "tinker.sample.android.app.BaseBuildInfo"
             ]
         }
 
